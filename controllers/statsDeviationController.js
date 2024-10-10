@@ -74,11 +74,10 @@ const getDeviation = asyncHandler(async (req, res) => {
       .limit(100)
       .lean();
 
-    // if (records.length < 2) {
-    //   return res
-    //     .status(404)
-    //     .json({ error: "Not enough data to calculate deviation" });
-    // }
+    if (records.length < 2) {
+      res.status(400);
+      throw new Error("Not enough data to calculate deviation");
+    }
     const prices = records.map((record) => record.price);
     const deviation = parseFloat(calculateStandardDeviation(prices).toFixed(2));
 
