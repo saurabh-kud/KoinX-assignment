@@ -24,14 +24,17 @@
 # task
 
 Develop a server side application using Node.js and MongoDB and complete the following tasks.
+````sh
 Task 1
 Implement a background job that will fetch the current price in USD, market cap in USD and 24 hour change of 3 cryptocurrencies: Bitcoin, Matic, and Ethereum and store it in a database. This job should run once every 2 hours.
 The above details about a cryptocurrency can be fetched using an API from CoinGecko. You also have to search for the relevant API from their documentation: https://docs.coingecko.com/v3.0.1/reference/introduction.
 Hint: Coingecko IDs for the above listed coins are bitcoin, matic-network and ethereum.
+
+
 Task 2
 Implement an API /stats, that will return the latest data about the requested cryptocurrency.
 
-````sh
+
 Query params:
 {
 coin: `bitcoin` // Could be one of the above 3 coins
@@ -127,7 +130,6 @@ RESPONSE 200
 
 ```json
 
-
 RESPONSE 200
 {
     "price": 0.362997,
@@ -139,23 +141,17 @@ RESPONSE 200
 </p>
 </details>
 
-> [GET] GET Deviation Endpoint [/deviation?coin=matic](http://localhost:3000/deviation?coin=matic)
+> [GET] GET Deviation Endpoint [/deviation?coin=ethereum](http://localhost:3000/deviation?coin=ethereum)
 
 <details open>
 <summary> See response</summary>
 <p>
 
 ```json
-{
-    "name":"admin2",
-    "email": "admin2@gmail.com",
-    "password":"admin@123",
-    "role": "admin"
-}
 
 RESPONSE 200
 {
-"deviation": 0
+"deviation": 3.02
 }
 ```
 
